@@ -4,14 +4,19 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Chintan27/smsMicro/global-db/sqldb"
+	"github.com/Chintan27/smsMicro/controllers"
+	"github.com/Chintan27/smsMicro/sqldb"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-// HelloWorld returns Hello, World
-func HelloWorld(w http.ResponseWriter, r *http.Request) {
-	if err := sqldb.DB.Ping(); err != nil {
-		fmt.Println("DB Error")
+func main() {
+	sqldb.ConnectDB()
+
+	http.HandleFunc("/", controllers.HelloWorld)
+
+	s := &http.Server{
+		Addr: fmt.Sprintf("%s:%s", "localhost", "5000"),
 	}
 
-	w.Write([]byte("Hello, World"))
+	s.ListenAndServe()
 }
