@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Chintan27/smsMicro/sqldb"
+	"github.com/techinscribed/global-db/sqldb"
 )
 
 // HelloWorld returns Hello, World
