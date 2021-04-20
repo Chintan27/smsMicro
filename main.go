@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Chintan27/smsMicro/baseController/controllers"
-	"github.com/Chintan27/smsMicro/mysql/sqldb"
+	"github.com/Chintan27/smsMicro/controllers"
+	"github.com/Chintan27/smsMicro/sqldb"
 )
 
 func main() {
